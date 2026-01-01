@@ -1,0 +1,750 @@
+nohup: ignoring input
+send: 'ehlo [172.16.0.22]\r\n'
+reply: b'250-newxmesmtplogicsvrsza56-0.qq.com\r\n'
+reply: b'250-PIPELINING\r\n'
+reply: b'250-SIZE 73400320\r\n'
+reply: b'250-AUTH LOGIN PLAIN XOAUTH XOAUTH2\r\n'
+reply: b'250-AUTH=LOGIN\r\n'
+reply: b'250-MAILCOMPRESS\r\n'
+reply: b'250-SMTPUTF8\r\n'
+reply: b'250 8BITMIME\r\n'
+reply: retcode (250); Msg: b'newxmesmtplogicsvrsza56-0.qq.com\nPIPELINING\nSIZE 73400320\nAUTH LOGIN PLAIN XOAUTH XOAUTH2\nAUTH=LOGIN\nMAILCOMPRESS\nSMTPUTF8\n8BITMIME'
+send: 'AUTH PLAIN ADMyOTI0NjE3NjhAcXEuY29tAHhtaGJrenp6Z3F1aWRhZWM=\r\n'
+reply: b'235 Authentication successful\r\n'
+reply: retcode (235); Msg: b'Authentication successful'
+send: 'mail FROM:<3292461768@qq.com> size=514\r\n'
+reply: b'250 OK\r\n'
+reply: retcode (250); Msg: b'OK'
+send: 'rcpt TO:<3292461768@qq.com>\r\n'
+reply: b'250 OK\r\n'
+reply: retcode (250); Msg: b'OK'
+send: 'data\r\n'
+reply: b'354 End data with <CR><LF>.<CR><LF>.\r\n'
+reply: retcode (354); Msg: b'End data with <CR><LF>.<CR><LF>.'
+data: (354, b'End data with <CR><LF>.<CR><LF>.')
+send: b'Content-Type: text/plain; charset="utf-8"\r\nMIME-Version: 1.0\r\nContent-Transfer-Encoding: base64\r\nFrom: eBPF Monitor <3292461768@qq.com>\r\nTo: User <3292461768@qq.com>\r\nSubject: =?utf-8?q?RPCQI_Health_Alert=3A_Score_0=2E00?=\r\n\r\nUlBDUUkgSGVhbHRoIFNjb3JlIGlzIGxvdzogMC4wMAoKTWV0cmljcyAoQXZlcmFnZSBEdXJhdGlv\r\nbiBwZXIgQ29ubmVjdGlvbik6Ci0gTG9zczogMC42MCBtcwotIENXUjogMC4wMCBtcwotIFJlY292\r\nZXJ5OiAyMDUuODcgbXMKLSBEaXNvcmRlcjogMC4wMCBtcwotIE9wZW46IDAuMDAgbXMKClRocmVz\r\naG9sZDogNzAuMApUaW1lOiAyMDI2LTAxLTAyIDAyOjEyOjExCg==\r\n.\r\n'
+reply: b'250 OK: queued as.\r\n'
+reply: retcode (250); Msg: b'OK: queued as.'
+data: (250, b'OK: queued as.')
+send: 'quit\r\n'
+reply: b'\x00\x00\x00\x1a\x00\x00\x00\n'
+reply: retcode (-1); Msg: b'\x00\x00\x00'
+send: 'ehlo [172.16.0.22]\r\n'
+reply: b'250-newxmesmtplogicsvrsza63-0.qq.com\r\n'
+reply: b'250-PIPELINING\r\n'
+reply: b'250-SIZE 73400320\r\n'
+reply: b'250-AUTH LOGIN PLAIN XOAUTH XOAUTH2\r\n'
+reply: b'250-AUTH=LOGIN\r\n'
+reply: b'250-MAILCOMPRESS\r\n'
+reply: b'250-SMTPUTF8\r\n'
+reply: b'250 8BITMIME\r\n'
+reply: retcode (250); Msg: b'newxmesmtplogicsvrsza63-0.qq.com\nPIPELINING\nSIZE 73400320\nAUTH LOGIN PLAIN XOAUTH XOAUTH2\nAUTH=LOGIN\nMAILCOMPRESS\nSMTPUTF8\n8BITMIME'
+send: 'AUTH PLAIN ADMyOTI0NjE3NjhAcXEuY29tAHhtaGJrenp6Z3F1aWRhZWM=\r\n'
+reply: b'235 Authentication successful\r\n'
+reply: retcode (235); Msg: b'Authentication successful'
+send: 'mail FROM:<3292461768@qq.com> size=514\r\n'
+reply: b'250 OK\r\n'
+reply: retcode (250); Msg: b'OK'
+send: 'rcpt TO:<3292461768@qq.com>\r\n'
+reply: b'250 OK\r\n'
+reply: retcode (250); Msg: b'OK'
+send: 'data\r\n'
+reply: b'354 End data with <CR><LF>.<CR><LF>.\r\n'
+reply: retcode (354); Msg: b'End data with <CR><LF>.<CR><LF>.'
+data: (354, b'End data with <CR><LF>.<CR><LF>.')
+send: b'Content-Type: text/plain; charset="utf-8"\r\nMIME-Version: 1.0\r\nContent-Transfer-Encoding: base64\r\nFrom: eBPF Monitor <3292461768@qq.com>\r\nTo: User <3292461768@qq.com>\r\nSubject: =?utf-8?q?RPCQI_Health_Alert=3A_Score_0=2E00?=\r\n\r\nUlBDUUkgSGVhbHRoIFNjb3JlIGlzIGxvdzogMC4wMAoKTWV0cmljcyAoQXZlcmFnZSBEdXJhdGlv\r\nbiBwZXIgQ29ubmVjdGlvbik6Ci0gTG9zczogMC4wMyBtcwotIENXUjogMC4wMCBtcwotIFJlY292\r\nZXJ5OiAyMDYuMjYgbXMKLSBEaXNvcmRlcjogMC4wMCBtcwotIE9wZW46IDAuMDAgbXMKClRocmVz\r\naG9sZDogNzAuMApUaW1lOiAyMDI2LTAxLTAyIDAyOjEzOjEzCg==\r\n.\r\n'
+reply: b'250 OK: queued as.\r\n'
+reply: retcode (250); Msg: b'OK: queued as.'
+data: (250, b'OK: queued as.')
+send: 'quit\r\n'
+reply: b'\x00\x00\x00\x1a\x00\x00\x00\n'
+reply: retcode (-1); Msg: b'\x00\x00\x00'
+Tracing tcp congestion control status duration... Hit Ctrl-C to end.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+LAddrPort            RAddrPort             Open_ms Dod_ms Rcov_ms Cwr_ms  Los_ms Chgs 
+127.0.0.1/8080        127.0.0.1/54888       0       0      0       0       0      2    
+
+Summary (this interval):
+  Total connections observed: 1
+  Avg Open:     0.01 ms
+  Avg Loss:     0.00 ms
+  Avg CWR:      0.00 ms
+  Avg Recover:  0.02 ms
+  Avg Disorder: 0.00 ms
+  Avg Changes:  2.00 (state changes per connection)
+
+
+Summary (this interval):
+  Total connections observed: 1
+  Avg Open:     0.01 ms
+  Avg Loss:     0.00 ms
+  Avg CWR:      0.00 ms
+  Avg Recover:  0.02 ms
+  Avg Disorder: 0.00 ms
+  Avg Changes:  2.00 (state changes per connection)
+
+  Health Score: 99.96
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+LAddrPort            RAddrPort             Open_ms Dod_ms Rcov_ms Cwr_ms  Los_ms Chgs 
+127.0.0.1/8080        127.0.0.1/56598       0       0      205     0       0      2    
+
+Summary (this interval):
+  Total connections observed: 1
+  Avg Open:     0.00 ms
+  Avg Loss:     0.60 ms
+  Avg CWR:      0.00 ms
+  Avg Recover:  205.87 ms
+  Avg Disorder: 0.00 ms
+  Avg Changes:  2.00 (state changes per connection)
+
+
+Summary (this interval):
+  Total connections observed: 1
+  Avg Open:     0.00 ms
+  Avg Loss:     0.60 ms
+  Avg CWR:      0.00 ms
+  Avg Recover:  205.87 ms
+  Avg Disorder: 0.00 ms
+  Avg Changes:  2.00 (state changes per connection)
+
+  Health Score: 0.00
+  [Alert] Health score below 70.0, sending email...
+[Debug] Preparing to send email...
+[Debug] Server: smtp.qq.com:465
+[Debug] Sender: 3292461768@qq.com
+[Debug] Connecting to SMTP SSL...
+[Debug] Logging in...
+[Debug] Sending mail...
+[Alert] Email sent successfully to 3292461768@qq.com
+  [Alert] Email sent successfully.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+LAddrPort            RAddrPort             Open_ms Dod_ms Rcov_ms Cwr_ms  Los_ms Chgs 
+127.0.0.1/8080        127.0.0.1/52502       0       0      206     0       0      2    
+
+Summary (this interval):
+  Total connections observed: 1
+  Avg Open:     0.00 ms
+  Avg Loss:     0.03 ms
+  Avg CWR:      0.00 ms
+  Avg Recover:  206.26 ms
+  Avg Disorder: 0.00 ms
+  Avg Changes:  2.00 (state changes per connection)
+
+
+Summary (this interval):
+  Total connections observed: 1
+  Avg Open:     0.00 ms
+  Avg Loss:     0.03 ms
+  Avg CWR:      0.00 ms
+  Avg Recover:  206.26 ms
+  Avg Disorder: 0.00 ms
+  Avg Changes:  2.00 (state changes per connection)
+
+  Health Score: 0.00
+  [Alert] Health score below 70.0, sending email...
+[Debug] Preparing to send email...
+[Debug] Server: smtp.qq.com:465
+[Debug] Sender: 3292461768@qq.com
+[Debug] Connecting to SMTP SSL...
+[Debug] Logging in...
+[Debug] Sending mail...
+[Alert] Email sent successfully to 3292461768@qq.com
+  [Alert] Email sent successfully.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+LAddrPort            RAddrPort             Open_ms Dod_ms Rcov_ms Cwr_ms  Los_ms Chgs 
+127.0.0.1/8080        127.0.0.1/41032       0       0      0       0       0      1    
+127.0.0.1/8080        127.0.0.1/40988       0       0      0       0       0      1    
+127.0.0.1/8080        127.0.0.1/41010       0       0      0       0       0      1    
+127.0.0.1/8080        127.0.0.1/41012       0       0      0       0       0      1    
+
+Summary (this interval):
+  Total connections observed: 4
+  Avg Open:     0.00 ms
+  Avg Loss:     0.00 ms
+  Avg CWR:      0.00 ms
+  Avg Recover:  0.02 ms
+  Avg Disorder: 0.00 ms
+  Avg Changes:  1.00 (state changes per connection)
+
+
+Summary (this interval):
+  Total connections observed: 4
+  Avg Open:     0.00 ms
+  Avg Loss:     0.00 ms
+  Avg CWR:      0.00 ms
+  Avg Recover:  0.02 ms
+  Avg Disorder: 0.00 ms
+  Avg Changes:  1.00 (state changes per connection)
+
+  Health Score: 99.96
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+
+
+No TCP connections with state changes observed in this interval.
+

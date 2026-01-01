@@ -68,23 +68,23 @@ nohup /root/.vector/bin/vector \
 
 You can run multiple instances of the monitors for different purposes.
 
-**Option A: Monitor Default Traffic**
+**Option A: Monitor Default Traffic (Sanic Port 8001/8081)**
 ```bash
-# Client Metrics
-nohup python3 /root/ebpf_rust/bpf/RPCLI_monitor.py > /root/ebpf_rust/logs/rpcli.log 2>&1 &
+# Client Metrics (Port 8001)
+nohup python3 /root/ebpf_rust/bpf/RPCLI_monitor.py -p 8001 --json-log /root/ebpf_rust/logs/rpcli.log > /root/ebpf_rust/logs/rpcli.out 2>&1 &
 
-# Quality Metrics (interval 5s)
-nohup python3 /root/ebpf_rust/bpf/RPCQI_monitor.py 5 > /root/ebpf_rust/logs/rpcqi.log 2>&1 &
+# Quality Metrics (Port 8081, interval 5s)
+nohup python3 /root/ebpf_rust/bpf/RPCQI_monitor.py -p 8081 5 --log-file /root/ebpf_rust/logs/rpcqi.log > /root/ebpf_rust/logs/rpcqi.out 2>&1 &
 ```
 
 **Option B: Monitor Proxy Traffic (Port 8080)**
 Using the `-p` flag separates the logs and storage.
 ```bash
 # Client Metrics (Port 8080)
-nohup python3 /root/ebpf_rust/bpf/RPCLI_monitor.py -p 8080 > /root/ebpf_rust/logs/rpcli_proxy.log 2>&1 &
+nohup python3 /root/ebpf_rust/bpf/RPCLI_monitor.py -p 8080 --json-log /root/ebpf_rust/logs/rpcli_proxy.log > /root/ebpf_rust/logs/rpcli_proxy.out 2>&1 &
 
 # Quality Metrics (Port 8080, interval 5s)
-nohup python3 /root/ebpf_rust/bpf/RPCQI_monitor.py -p 8080 5 > /root/ebpf_rust/logs/rpcqi_proxy.log 2>&1 &
+nohup python3 /root/ebpf_rust/bpf/RPCQI_monitor.py -p 8080 5 --log-file /root/ebpf_rust/logs/rpcqi_proxy.log > /root/ebpf_rust/logs/rpcqi_proxy.out 2>&1 &
 ```
 
 ---
@@ -109,11 +109,16 @@ ORDER BY time ASC
 **2. Connection Success Rate**
 ```sql
 SELECT
-    timestamp AS time,
-    success_rate AS "Success Rate (%)"
+    CASE 
+        WHEN success_rate = 100 THEN '100% Success'
+        WHEN success_rate >= 90 THEN '90-99% Success'
+        WHEN success_rate >= 70 THEN '70-89% Success'
+        ELSE '<70% Success'
+    END AS category,
+    COUNT(*) AS cnt
 FROM rpcli_log
 WHERE timestamp >= now() - INTERVAL 24 HOUR
-ORDER BY time ASC
+GROUP BY category;
 ```
 
 **3. Congestion States (Network Quality)**
@@ -144,11 +149,16 @@ ORDER BY time ASC
 **2. Proxy Success Rate**
 ```sql
 SELECT
-    timestamp AS time,
-    success_rate AS "Success Rate (%)"
+    CASE 
+        WHEN success_rate = 100 THEN '100% Success'
+        WHEN success_rate >= 90 THEN '90-99% Success'
+        WHEN success_rate >= 70 THEN '70-89% Success'
+        ELSE '<70% Success'
+    END AS category,
+    COUNT(*) AS cnt
 FROM rpcli_log_proxy
 WHERE timestamp >= now() - INTERVAL 24 HOUR
-ORDER BY time ASC
+GROUP BY category;
 ```
 
 **3. Proxy Congestion States**
@@ -170,15 +180,15 @@ Use the provided test scripts to generate traffic and verify the pipeline.
 ### 1. SYN Flood / Half-Open Test
 Generates incomplete TCP connections (SYN only) to simulate traffic or attacks.
 ```bash
-# Generates SYN flood / connection attempts on port 8080
-/usr/bin/python3 /root/ebpf_rust/python/tests/test_syn.py
+# Uses system Python (requires scapy)
+/usr/bin/python3 /root/ebpf_rust/python/tests/test_syn.py -p 8080
 ```
 
 ### 2. End-to-End Proxy Test (Real Traffic)
 Starts the backend, the proxy, and sends real HTTP CRUD requests. This generates **healthy** traffic (high success rate).
 ```bash
-# Requires Sanic and Rust Proxy build
-/usr/bin/python3 /root/ebpf_rust/python/tests/test_proxy_e2e.py
+# Uses Sanic virtual environment (requires requests, pytest)
+/root/ebpf_rust/sanic/bin/python -m pytest -v -s /root/ebpf_rust/python/tests/test_proxy_e2e.py
 ```
 
 After running the tests, check the `*_proxy` tables in ClickHouse to see the generated data.

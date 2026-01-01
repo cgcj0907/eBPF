@@ -28,6 +28,8 @@ parser.add_argument("-i", "--interval", type=int, default=5,
     help="统计间隔秒数 (默认 5s)")
 parser.add_argument("-p", "--port", type=int,
     help="只监控指定的本地端口")
+parser.add_argument("--json-log", type=str, default="/root/ebpf_rust/logs/rpcli.log",
+    help="JSON日志输出路径")
 parser.add_argument("-m", "--milliseconds", action="store_true",
     help="RTT 使用毫秒单位 (默认微秒)")
 parser.add_argument("-T", "--timestamp", action="store_true",
@@ -417,7 +419,7 @@ try:
                 print(f"{port_s} {rtt_s} {trend_s} {bar_s} {syn_s} {est_s} {succ_s} {retrans_s}")
 
             # ---- JSON Log Output ----
-            LOG_FILE = "/root/ebpf_rust/logs/rpcli.log"
+            LOG_FILE = args.json_log
             # Define timezone (UTC+8)
             CST = timezone(timedelta(hours=8))
             timestamp = datetime.now(CST).strftime("%Y-%m-%d %H:%M:%S")

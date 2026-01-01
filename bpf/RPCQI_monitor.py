@@ -53,6 +53,8 @@ parser.add_argument("outputs", nargs="?", default=99999999,
 parser.add_argument("--ebpf", action="store_true",
     help=argparse.SUPPRESS)
 parser.add_argument("-p", "--port", help="Filter port", type=int, default=0)
+parser.add_argument("--log-file", type=str, default="/root/ebpf_rust/logs/rpcqi.log",
+    help="Log output path")
 args = parser.parse_args()
 countdown = int(args.outputs)
 debug = 0
@@ -75,6 +77,11 @@ if start_rport > end_rport:
     end_rport = tmp
 
 start_lport = end_lport = -1
+# filters
+if args.port != 0:
+    # If -p/--port is specified, treat it as a single local port filter
+    args.localport = str(args.port)
+
 if args.localport:
     lports = args.localport.split("-")
     if (len(lports) != 2) and (len(lports) != 1):
@@ -842,10 +849,7 @@ while (1):
             
             # --- 配置：输出文件（每条记录为一行 JSON） ---
             # 改为你想要的路径，如 '/var/log/tcpcong_summary.jsonl'（注意权限）
-            if args.port == 8080:
-                OUTFILE = "/root/ebpf_rust/logs/rpcqi_proxy.log"
-            else:
-                OUTFILE = "/root/ebpf_rust/logs/rpcqi.log"
+            OUTFILE = args.log_file
             
             # ---------- 在计算完 avg_* 之后，替换原有的 summary 打印部分 ----------
             # 原来位置（示例）：
