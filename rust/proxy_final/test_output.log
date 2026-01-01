@@ -1,0 +1,13 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-9.0.0, pluggy-1.6.0
+rootdir: /root/ebpf_rust
+collected 5 items
+
+../../python/tests/test_proxy_e2e.py Starting Sanic backend on port 8001...
+Backend is ready.
+Starting Rust proxy on port 8080 -> 8001...
+Proxy is ready.
+.....Shutting down processes...
+
+
+============================== 5 passed in 5.10s ===============================

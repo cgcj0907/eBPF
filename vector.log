@@ -1,0 +1,26 @@
+2026-01-01T15:19:39.245967Z  INFO vector::app: Log level is enabled. level="info"
+2026-01-01T15:19:39.247146Z  INFO vector::app: Loading configs. paths=["/root/ebpf_rust/vector/tcpcong.toml"]
+2026-01-01T15:19:39.301738Z  INFO vector::topology::running: Running healthchecks.
+2026-01-01T15:19:39.301876Z  INFO vector: Vector has started. debug="false" version="0.51.1" arch="x86_64" revision="44c8f1c 2025-11-13 15:16:05.303418529"
+2026-01-01T15:19:39.301976Z  INFO vector::app: API is disabled, enable by setting `api.enabled` to `true` and use commands like `vector top`.
+2026-01-01T15:19:39.302146Z  INFO source{component_kind="source" component_id=rpcqi_source component_type=file}: vector::sources::file: Starting file server. include=["/root/ebpf_rust/logs/rpcqi.log"] exclude=[]
+2026-01-01T15:19:39.302165Z  INFO source{component_kind="source" component_id=tcpcong_source component_type=file}: vector::sources::file: Starting file server. include=["/root/ebpf_rust/logs/tcpcong.log"] exclude=[]
+2026-01-01T15:19:39.303322Z  INFO source{component_kind="source" component_id=rpcqi_source component_type=file}:file_server: file_source_common::checkpointer: Loaded checkpoint data.
+2026-01-01T15:19:39.303754Z  INFO source{component_kind="source" component_id=rpcqi_source component_type=file}:file_server: vector::internal_events::file::source: Resuming to watch file. file=/root/ebpf_rust/logs/rpcqi.log file_position=143
+2026-01-01T15:19:39.304111Z  INFO source{component_kind="source" component_id=tcpcong_source component_type=file}:file_server: file_source_common::checkpointer: Loaded checkpoint data.
+2026-01-01T15:19:39.304585Z  INFO source{component_kind="source" component_id=tcpcong_source component_type=file}:file_server: vector::internal_events::file::source: Resuming to watch file. file=/root/ebpf_rust/logs/tcpcong.log file_position=8683
+2026-01-01T15:19:39.305152Z  INFO vector::topology::builder: Healthcheck passed.
+2026-01-01T15:19:39.306143Z  INFO vector::topology::builder: Internal log [Healthcheck passed.] is being suppressed to avoid flooding.
+2026-01-01T15:43:48.001097Z  INFO vector::signal: Signal received. signal="SIGHUP"
+2026-01-01T15:43:48.002467Z  INFO vector::signal: Internal log [Signal received.] is being suppressed to avoid flooding.
+2026-01-01T15:43:48.004888Z  INFO vector::topology::running: Reloading running topology with new configuration.
+2026-01-01T15:43:48.016468Z  INFO vector::topology::running: Running healthchecks.
+2026-01-01T15:43:48.016636Z  INFO vector::topology::running: New configuration loaded successfully.
+2026-01-01T15:43:48.018850Z  INFO vector: Vector has reloaded. path=[File("/root/ebpf_rust/vector/tcpcong.toml", None)] internal_log_rate_limit=false
+2026-01-01T15:43:48.022069Z  INFO vector::topology::running: Internal log [Reloading running topology with new configuration.] is being suppressed to avoid flooding.
+2026-01-01T15:43:48.022331Z  INFO vector::topology::running: Internal log [Running healthchecks.] is being suppressed to avoid flooding.
+2026-01-01T15:43:48.022552Z  INFO vector::topology::running: Internal log [New configuration loaded successfully.] is being suppressed to avoid flooding.
+2026-01-01T15:43:48.022569Z  INFO vector: Vector has reloaded. path=[File("/root/ebpf_rust/vector/tcpcong.toml", None)] internal_log_rate_limit=false
+2026-01-01T15:47:33.359975Z  INFO vector::signal: Signal received. signal="SIGTERM"
+2026-01-01T15:47:33.360066Z  INFO vector: Vector has stopped.
+2026-01-01T15:47:33.361661Z  INFO vector::topology::running: Shutting down... Waiting on running components. remaining_components="tcpcong_parse, rpcqi_parse, tcpcong_source, rpcqi_source, tcpcong_sink, rpcqi_sink" time_remaining="59 seconds left"

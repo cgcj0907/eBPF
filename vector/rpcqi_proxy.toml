@@ -1,0 +1,41 @@
+# =======================================================
+# RPCQI Proxy Monitor Pipeline
+# =======================================================
+
+[sources.rpcqi_proxy_source]
+type = "file"
+include = ["/root/ebpf_rust/logs/rpcqi_proxy.log"]
+
+[transforms.rpcqi_proxy_parse]
+type = "remap"
+inputs = ["rpcqi_proxy_source"]
+source = '''
+. = parse_key_value!(.message)
+
+.level = if exists(.level) { .level } else { "info" }
+.msg = if exists(.msg) { .msg } else { "RPCQI health summary" }
+
+.ts = if exists(.timestamp) { .timestamp } else { now() }
+
+.AvgOpen = if exists(.AvgOpen) { to_float!(.AvgOpen) } else { 0.0 }
+.AvgLoss = if exists(.AvgLoss) { to_float!(.AvgLoss) } else { 0.0 }
+.AvgCWR = if exists(.AvgCWR) { to_float!(.AvgCWR) } else { 0.0 }
+.AvgRecover = if exists(.AvgRecover) { to_float!(.AvgRecover) } else { 0.0 }
+.AvgDisorder = if exists(.AvgDisorder) { to_float!(.AvgDisorder) } else { 0.0 }
+.AvgChanges = if exists(.AvgChanges) { to_float!(.AvgChanges) } else { 0.0 }
+
+.connections = if exists(.connections) { to_int!(.connections) } else { 0 }
+'''
+
+[sinks.rpcqi_proxy_sink]
+type = "clickhouse"
+inputs = ["rpcqi_proxy_parse"]
+endpoint = "http://localhost:8123"
+database = "default"
+table = "rpcqi_summary_proxy"
+date_time_best_effort = true
+
+[sinks.rpcqi_proxy_sink.auth]
+strategy = "basic"
+user = "default"
+password = "zgy362322"

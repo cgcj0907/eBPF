@@ -1,0 +1,36 @@
+# =======================================================
+# RPCLI Monitor Pipeline (Client RTT/SYN)
+# =======================================================
+
+# -------------------------------
+# Source: RPCLI Log (JSON)
+# -------------------------------
+[sources.rpcli_source]
+type = "file"
+include = ["/root/ebpf_rust/logs/rpcli.log"]
+
+# -------------------------------
+# Transform: Parse JSON
+# -------------------------------
+[transforms.rpcli_parse]
+type = "remap"
+inputs = ["rpcli_source"]
+source = '''
+. = parse_json!(.message)
+'''
+
+# -------------------------------
+# Sink: ClickHouse (rpcli_log)
+# -------------------------------
+[sinks.rpcli_sink]
+type = "clickhouse"
+inputs = ["rpcli_parse"]
+endpoint = "http://localhost:8123"
+database = "default"
+table = "rpcli_log"
+date_time_best_effort = true
+
+[sinks.rpcli_sink.auth]
+strategy = "basic"
+user = "default"
+password = "zgy362322"

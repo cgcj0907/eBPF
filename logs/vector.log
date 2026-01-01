@@ -1,0 +1,14 @@
+nohup: ignoring input
+2026-01-01T16:24:16.692076Z  INFO vector::app: Log level is enabled. level="info"
+2026-01-01T16:24:16.692990Z  INFO vector::app: Loading configs. paths=["/root/ebpf_rust/vector/rpcli.toml", "/root/ebpf_rust/vector/rpcqi.toml"]
+2026-01-01T16:24:16.748731Z  INFO vector::topology::running: Running healthchecks.
+2026-01-01T16:24:16.748861Z  INFO vector: Vector has started. debug="false" version="0.51.1" arch="x86_64" revision="44c8f1c 2025-11-13 15:16:05.303418529"
+2026-01-01T16:24:16.748877Z  INFO vector::app: API is disabled, enable by setting `api.enabled` to `true` and use commands like `vector top`.
+2026-01-01T16:24:16.748920Z  INFO source{component_kind="source" component_id=rpcqi_source component_type=file}: vector::sources::file: Starting file server. include=["/root/ebpf_rust/logs/rpcqi.log"] exclude=[]
+2026-01-01T16:24:16.749114Z  INFO source{component_kind="source" component_id=rpcli_source component_type=file}: vector::sources::file: Starting file server. include=["/root/ebpf_rust/logs/rpcli.log"] exclude=[]
+2026-01-01T16:24:16.750281Z  INFO source{component_kind="source" component_id=rpcqi_source component_type=file}:file_server: file_source_common::checkpointer: Loaded checkpoint data.
+2026-01-01T16:24:16.750295Z  INFO source{component_kind="source" component_id=rpcli_source component_type=file}:file_server: file_source_common::checkpointer: Loaded checkpoint data.
+2026-01-01T16:24:16.750655Z  INFO source{component_kind="source" component_id=rpcqi_source component_type=file}:file_server: vector::internal_events::file::source: Resuming to watch file. file=/root/ebpf_rust/logs/rpcqi.log file_position=175
+2026-01-01T16:24:16.751943Z  INFO vector::topology::builder: Healthcheck passed.
+2026-01-01T16:24:16.752344Z  INFO source{component_kind="source" component_id=rpcli_source component_type=file}:file_server: vector::internal_events::file::source: Resuming to watch file. file=/root/ebpf_rust/logs/rpcli.log file_position=14881
+2026-01-01T16:24:17.779537Z  INFO vector::topology::builder: Internal log [Healthcheck passed.] is being suppressed to avoid flooding.

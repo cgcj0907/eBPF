@@ -1,0 +1,27 @@
+# =======================================================
+# RPCLI Proxy Monitor Pipeline
+# =======================================================
+
+[sources.rpcli_proxy_source]
+type = "file"
+include = ["/root/ebpf_rust/logs/rpcli_proxy.log"]
+
+[transforms.rpcli_proxy_parse]
+type = "remap"
+inputs = ["rpcli_proxy_source"]
+source = '''
+. = parse_json!(.message)
+'''
+
+[sinks.rpcli_proxy_sink]
+type = "clickhouse"
+inputs = ["rpcli_proxy_parse"]
+endpoint = "http://localhost:8123"
+database = "default"
+table = "rpcli_log_proxy"
+date_time_best_effort = true
+
+[sinks.rpcli_proxy_sink.auth]
+strategy = "basic"
+user = "default"
+password = "zgy362322"
