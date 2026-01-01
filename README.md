@@ -39,14 +39,14 @@ Run the following commands to create the necessary tables in ClickHouse.
 
 **Default Tables (General Services):**
 ```bash
-curl -u default:zgy362322 -X POST 'http://localhost:8123/' --data-binary '
+curl -u default:password -X POST 'http://localhost:8123/' --data-binary '
 CREATE TABLE IF NOT EXISTS rpcli_log (timestamp DateTime, port UInt16, avg_rtt_us Float64, syn_recv UInt64, established UInt64, retrans UInt64, success_rate Float64) ENGINE = MergeTree() ORDER BY timestamp;
 CREATE TABLE IF NOT EXISTS rpcqi_summary (ts DateTime, AvgOpen Float64, AvgLoss Float64, AvgCWR Float64, AvgRecover Float64, AvgDisorder Float64, AvgChanges Float64, connections UInt32) ENGINE = MergeTree() ORDER BY ts;'
 ```
 
 **Proxy Tables (Reverse Proxy / Port 8080):**
 ```bash
-curl -u default:zgy362322 -X POST 'http://localhost:8123/' --data-binary '
+curl -u default:password -X POST 'http://localhost:8123/' --data-binary '
 CREATE TABLE IF NOT EXISTS rpcli_log_proxy (timestamp DateTime, port UInt16, avg_rtt_us Float64, syn_recv UInt64, established UInt64, retrans UInt64, success_rate Float64) ENGINE = MergeTree() ORDER BY timestamp;
 CREATE TABLE IF NOT EXISTS rpcqi_summary_proxy (ts DateTime, AvgOpen Float64, AvgLoss Float64, AvgCWR Float64, AvgRecover Float64, AvgDisorder Float64, AvgChanges Float64, connections UInt32) ENGINE = MergeTree() ORDER BY ts;'
 ```
