@@ -74,7 +74,7 @@ You can run multiple instances of the monitors for different purposes.
 nohup python3 /root/ebpf_rust/bpf/RPCLI_monitor.py -p 8001 --json-log /root/ebpf_rust/logs/rpcli.log > /root/ebpf_rust/logs/rpcli.out 2>&1 &
 
 # Quality Metrics (Port 8081, interval 5s)
-nohup python3 /root/ebpf_rust/bpf/RPCQI_monitor.py -p 8081 5 --log-file /root/ebpf_rust/logs/rpcqi.log > /root/ebpf_rust/logs/rpcqi.out 2>&1 &
+nohup python3 /root/ebpf_rust/bpf/RPCQI_monitor.py -p 8001 5 --log-file /root/ebpf_rust/logs/rpcqi.log > /root/ebpf_rust/logs/rpcqi.out 2>&1 &
 ```
 
 **Option B: Monitor Proxy Traffic (Port 8080)**

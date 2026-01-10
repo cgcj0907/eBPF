@@ -87,3 +87,8 @@ timestamp="2026-01-02 02:07:06" level=info msg="TCP congestion summary" AvgOpen=
 timestamp="2026-01-02 02:12:11" level=info msg="TCP congestion summary" AvgOpen=0.00 AvgLoss=0.60 AvgCWR=0.00 AvgRecover=205.87 AvgDisorder=0.00 AvgChanges=2.00 connections=1
 timestamp="2026-01-02 02:13:13" level=info msg="TCP congestion summary" AvgOpen=0.00 AvgLoss=0.03 AvgCWR=0.00 AvgRecover=206.26 AvgDisorder=0.00 AvgChanges=2.00 connections=1
 timestamp="2026-01-02 02:15:05" level=info msg="TCP congestion summary" AvgOpen=0.00 AvgLoss=0.00 AvgCWR=0.00 AvgRecover=0.02 AvgDisorder=0.00 AvgChanges=1.00 connections=4
+timestamp="2026-01-02 02:36:51" level=info msg="TCP congestion summary" AvgOpen=0.00 AvgLoss=0.03 AvgCWR=0.00 AvgRecover=0.01 AvgDisorder=901.99 AvgChanges=2.00 connections=2
+timestamp="2026-01-02 02:37:47" level=info msg="TCP congestion summary" AvgOpen=0.00 AvgLoss=0.03 AvgCWR=0.00 AvgRecover=103.27 AvgDisorder=0.00 AvgChanges=1.50 connections=2
+timestamp="2026-01-02 03:11:59" level=info msg="TCP congestion summary" AvgOpen=0.00 AvgLoss=0.00 AvgCWR=0.00 AvgRecover=0.02 AvgDisorder=0.00 AvgChanges=1.00 connections=1
+timestamp="2026-01-02 03:16:09" level=info msg="TCP congestion summary" AvgOpen=0.00 AvgLoss=0.00 AvgCWR=0.00 AvgRecover=0.02 AvgDisorder=0.00 AvgChanges=1.00 connections=1
+timestamp="2026-01-10 17:34:12" level=info msg="TCP congestion summary" AvgOpen=0.00 AvgLoss=0.00 AvgCWR=0.00 AvgRecover=0.02 AvgDisorder=0.00 AvgChanges=2.00 connections=1

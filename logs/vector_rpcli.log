@@ -1,0 +1,19 @@
+nohup: ignoring input
+2026-01-01T19:19:09.651183Z  INFO vector::app: Log level is enabled. level="info"
+2026-01-01T19:19:09.651951Z  INFO vector::app: Loading configs. paths=["/root/ebpf_rust/vector/rpcli.toml", "/root/ebpf_rust/vector/rpcli_proxy.toml"]
+2026-01-01T19:19:09.705994Z  INFO vector::topology::running: Running healthchecks.
+2026-01-01T19:19:09.706122Z  INFO vector: Vector has started. debug="false" version="0.51.1" arch="x86_64" revision="44c8f1c 2025-11-13 15:16:05.303418529"
+2026-01-01T19:19:09.706137Z  INFO vector::app: API is disabled, enable by setting `api.enabled` to `true` and use commands like `vector top`.
+2026-01-01T19:19:09.706213Z  INFO source{component_kind="source" component_id=rpcli_proxy_source component_type=file}: vector::sources::file: Starting file server. include=["/root/ebpf_rust/logs/rpcli_proxy.log"] exclude=[]
+2026-01-01T19:19:09.706430Z  INFO source{component_kind="source" component_id=rpcli_source component_type=file}: vector::sources::file: Starting file server. include=["/root/ebpf_rust/logs/rpcli.log"] exclude=[]
+2026-01-01T19:19:09.710128Z  INFO vector::topology::builder: Healthcheck passed.
+2026-01-01T19:19:09.710233Z  INFO vector::topology::builder: Internal log [Healthcheck passed.] is being suppressed to avoid flooding.
+2026-01-01T19:19:09.710177Z  INFO source{component_kind="source" component_id=rpcli_source component_type=file}:file_server: file_source_common::checkpointer: Loaded checkpoint data.
+2026-01-01T19:19:09.710364Z  INFO source{component_kind="source" component_id=rpcli_proxy_source component_type=file}:file_server: file_source_common::checkpointer: Loaded checkpoint data.
+2026-01-01T19:19:09.710815Z  INFO source{component_kind="source" component_id=rpcli_proxy_source component_type=file}:file_server: vector::internal_events::file::source: Resuming to watch file. file=/root/ebpf_rust/logs/rpcli_proxy.log file_position=3302
+2026-01-01T19:19:09.710817Z  INFO source{component_kind="source" component_id=rpcli_source component_type=file}:file_server: vector::internal_events::file::source: Resuming to watch file. file=/root/ebpf_rust/logs/rpcli.log file_position=426
+2026-01-01T19:30:18.505854Z  INFO vector::signal: Signal received. signal="SIGHUP"
+2026-01-01T19:30:18.508768Z  INFO vector::topology::running: Reloading running topology with new configuration.
+2026-01-01T19:30:18.520752Z  INFO vector::topology::running: Running healthchecks.
+2026-01-01T19:30:18.520807Z  INFO vector::topology::running: New configuration loaded successfully.
+2026-01-01T19:30:18.520822Z  INFO vector: Vector has reloaded. path=[File("/root/ebpf_rust/vector/rpcli.toml", None), File("/root/ebpf_rust/vector/rpcli_proxy.toml", None)] internal_log_rate_limit=false
